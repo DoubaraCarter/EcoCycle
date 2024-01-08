@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.btn-green{
+    background-color: #009900;
+    color: white;
+}
+.text-green{
+    color: #00b300;
+}
+.bg-green{
+    background-color: #00b300;
+}
+.partner-line {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #969696; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+ } 
+ 
+.partner-line span { 
+     background: #f8f9fa; 
+     padding:0 10px; 
+ }
+.form-control:focus {
+    border: none;
+    box-shadow: 0 0 5px #009900;
+}
+
+                                            /* Dashboard Custom Styles */
+.nav li .active-page  {
+    background-color: #009900;
+    color: #fff;
+    border-radius: 5px;
+}
+.link-green{
+    color: white;
+    cursor: pointer;
+}
+.nav li .link-green{
+    color: black;
+    border-radius: 5px;
+}
+.nav li .nav-link:hover{
+    background: #009900;
+    color: white;
+    border-radius: 5px;
+}
+.border-left-green{
+    border-left: 4px solid #16e716;
+}
+#myTable_wrapper .dataTables_filter {
+    margin-bottom: 10px;
+}

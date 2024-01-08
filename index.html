@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCycle</title>
+
+    <link rel="stylesheet" href="./style/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <div class="px-5">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="col-md-3 mb-2 mb-md-0">
+            <a href="/" class="d-flex fw-bold fs-2 align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                Eco<span class="text-green">Cycle</span>
+            </a>
+          </div>
+    
+          <ul class="nav col-12 gap-3 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">About us</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Our Services</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Our Goals</a></li>
+          </ul>
+    
+          <div class="col-md-3 text-end">
+            <a href="./pages/userAuth/signIn.html"><button type="button" class="btn btn-outline-success me-2">Login</button></a>
+            <a href="./pages/userAuth/signUp.html"><button type="button" class="btn btn-green px-4">Sign-up</button></a>
+          </div>
+        </header>
+      </div>
+    <!-- End of Nav Bar -->
+
+    <!-- Hero Section -->
+    <div class="col-xxl-8 px-5 py-5">
+      <div class="row flex-lg-row-reverse align-items-center g-5">
+        <div class="col-10 col-sm-8 col-lg-6" id="hero-img">
+
+        </div>
+        <div class="col-lg-6">
+          <h1 class="display-3 fw-bold lh-1 mb-3">Recycle your <span class="text-green">waste</span> and save the world.</h1>
+          <p class="fs-5 text-secondary">Effortless Waste Solutions at Your Fingertips: Order, Relax, Recycle!</p>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <button type="button" class="btn btn-green btn-lg px-4 me-md-2">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Hero Section -->
+
+    <!-- Banner Section -->
+      <div class="container text-white bg-green py-2 rounded-5">
+        <h4 class="text-center fs-3 mb-4">Done in 3 easy steps</h4>
+        <div class="row d-flex align-items-center justify-content-between px-5 text-center">
+          <div class="col-3 d-flex flex-column">
+                <i class='bx bx-trash fs-1 mb-3' style='color:#ffdc03'></i>
+                <span class="text-warning fs-4">01</span>
+                <p class="fs-5">Segregate your waste</p>
+          </div>
+            <div class="col-3 d-flex flex-column">
+                <i class='bx bx-calendar fs-1 mb-3' style='color:#ffdb00'  ></i>
+                <span class="text-warning fs-4">02</span>
+                <p class="fs-5">Scheduele a pick up</p>
+            </div>
+            <div class="col-3 d-flex flex-column">
+                <i class='bx bxs-truck fs-1 mb-3' style='color:#ffdb00' ></i>
+                <span class="text-warning fs-4">03</span>
+                <p class="fs-5">Trash Collection</p>
+            </div>
+        </div>
+      </div>
+    <!-- End of Banner Section -->
+
+  <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.7/build/player/lottie.min.js"></script>
+  <script>
+    // Replace with the path to your LottieFiles JSON file
+    var animationPath = "./images/Animation - 1701628702730.json";
+  
+    // Replace with the ID of your HTML container
+    var container = document.getElementById("hero-img");
+  
+    // Load the Lottie animation
+    lottie.loadAnimation({
+      container: container,
+      renderer: "svg", // or "canvas" or "html"
+      loop: true,
+      autoplay: true,
+      path: animationPath
+    });
+  </script>
+
+</body>
+</html>

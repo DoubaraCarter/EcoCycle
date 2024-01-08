@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard || EcoCycle</title>
+
+    <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <!-- Box icons cdn -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <div class="w-100 d-lg-flex flex-row">
+        <!-- Aside Nav -->
+        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary border border-start-0 border-top-0 border-bottom-0 border-3 position-sticky fixed-top" style="width: 22%; height: 100vh;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none gap-3 ps-3">
+              <img src="../../images/favicon.png" alt="">
+              <span class="fs-4 fw-bold">Eco<span class="text-success">Cycle</span></span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="./dashboard.html" class="nav-link d-flex align-items-center gap-3 active-page" aria-current="page">
+                <i class='bx bxs-dashboard'></i>
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link d-flex align-items-center gap-3 link-green">
+                <i class='bx bxs-truck' ></i>
+                  Pick Up
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link d-flex align-items-center gap-3 link-green">
+                <i class='bx bx-donate-heart'></i>
+                  Donations
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link d-flex align-items-center gap-3 link-green">
+                <i class='bx bxs-book'></i>
+                  Learn
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link d-flex align-items-center gap-3 link-green">
+                <i class='bx bx-user'></i>
+                  Profile
+                </a>
+              </li>
+            </ul>
+            <div class="col-12" id="nav-img">
+
+            </div>
+        </div>
+
+        <!-- Dashboard Body (Stats) -->
+        <div class="d-flex flex-column col-lg-9 px-5">
+            <div class="mb-4">
+              <h3 class="fs-4 pt-3 ps-2 fw-bold">My Dashboard</h3>
+            </div>
+
+            <div class="d-flex flex-column ">
+                <div class="d-flex row gap-5">
+                    <!-- Money Cards -->
+                    <div class="col-5 d-flex flex-column gap-3">
+                        <div class="card border-left-green shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col me-2">
+                                        <div class="fw-bold text-secondary mb-1">
+                                            Available Balance
+                                        </div>
+                                        <div class="h5 mb-0 fw-bold text-black">$4000</div>
+                                    </div>
+                                    <div class="col-auto">
+                                      <i class='bx bx-credit-card fs-1 fw-bold' style="color: #cec7c7;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-left-green shadow h-100 py-2">
+                            <div class="card-body">
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col me-2">
+                                        <div class="fw-bold text-secondary mb-1">
+                                            Money Spent (Month)
+                                        </div>
+                                        <div class="h5 mb-0 fw-bold text-black">$3400</div>
+                                    </div>
+                                    <div class="col-auto">
+                                      <i class='bx bx-money fs-1 fw-bold' style="color: #cec7c7;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pie chart using chartJS -->
+                    <div class="col-6 border border-1 shadow">
+                        <canvas id="myLineChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Stats Table -->
+                <div class="col-12 mt-5">
+                    <h4 class="">History</h4>
+                    <table id="myTable" class="table table-reponsive table-hover table-striped table-light border border-2 shadow">
+                        <thead class="">
+                          <tr>
+                            <th>Request ID</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Details</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td>#3092</td>
+                              <td>2023-01-05</td>
+                              <td>Pending</td>
+                              <td><button class="btn btn-outline-success">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>#2198</td>
+                                <td>2022-11-21</td>
+                                <td>Completed</td>
+                                <td><button class="btn btn-outline-success">View Details</button></td>
+                            </tr>
+                            <tr>
+                                <td>#2187</td>
+                                <td>2022-10-11</td>
+                                <td>Completed</td>
+                                <td><button class="btn btn-outline-success">View Details</button></td>
+                            </tr>
+                          </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="../../script/dashboard.js"></script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var dataTable = new DataTable('#myTable', {
+            paging: true,
+            pageLength: 7,
+            lengthChange: false,
+            searching: true,
+            info: false,
+            ordering: false
+        });
+    });
+    </script>
+
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.7/build/player/lottie.min.js"></script>
+    <script>
+      // Replace with the path to your LottieFiles JSON file
+      var animationPath = "../../images/Animation - 1701628702730.json";
+    
+      // Replace with the ID of your HTML container
+      var container = document.getElementById("nav-img");
+    
+      // Load the Lottie animation
+      lottie.loadAnimation({
+        container: container,
+        renderer: "svg", // or "canvas" or "html"
+        loop: true,
+        autoplay: true,
+        path: animationPath
+      });
+    </script>
+
+</body>
+</html>
