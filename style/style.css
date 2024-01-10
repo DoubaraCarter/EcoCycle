@@ -54,3 +54,8 @@
 #myTable_wrapper .dataTables_filter {
     margin-bottom: 10px;
 }
+/* Mobile Footer Custom Style */
+.nav li .footer-link{
+    color: black;
+    border-radius: 5px;
+}

@@ -16,9 +16,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
 </head>
 <body>
-    <div class="w-100 d-lg-flex flex-row">
+    <div class="w-100 d-lg-flex flex-row gap-4">
         <!-- Aside Nav -->
-        <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary border border-start-0 border-top-0 border-bottom-0 border-3 position-sticky fixed-top" style="width: 22%; height: 100vh;">
+        <div class="d-none d-lg-flex flex-column flex-shrink-0 p-3 bg-body-tertiary border border-start-0 border-top-0 border-bottom-0 border-3 position-sticky fixed-top" style="width: 22%; height: 100vh;">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none gap-3 ps-3">
               <img src="../../images/favicon.png" alt="">
               <span class="fs-4 fw-bold">Eco<span class="text-success">Cycle</span></span>
@@ -62,19 +62,20 @@
         </div>
 
         <!-- Dashboard Body (Stats) -->
-        <div class="d-flex flex-column col-lg-9 px-5">
+        <div class="d-flex flex-column col-lg-9 px-2 ps-lg-3 pe-lg-5 mb-5 pb-4 m-lg-0">
             <div class="mb-4">
-              <h3 class="fs-4 pt-3 ps-2 fw-bold">My Dashboard</h3>
+              <h3 class="fs-4 mb-4 pt-3 ps-2 fw-bold text-center text-lg-start">My Dashboard</h3>
+              <hr>
             </div>
 
-            <div class="d-flex flex-column ">
-                <div class="d-flex row gap-5">
+            <div class="d-flex flex-column">
+                <div class="d-flex flex-column flex-lg-row gap-3 justify-content-between p-0 pe-lg-2">
                     <!-- Money Cards -->
-                    <div class="col-5 d-flex flex-column gap-3">
+                    <div class="col-12 col-lg-5 d-flex flex-column gap-3">
                         <div class="card border-left-green shadow h-100 py-2">
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
-                                    <div class="col me-2">
+                                    <div class="col me-2 d-flex flex-column justify-content-between">
                                         <div class="fw-bold text-secondary mb-1">
                                             Available Balance
                                         </div>
@@ -103,52 +104,68 @@
                         </div>
                     </div>
 
-                    <!-- Pie chart using chartJS -->
-                    <div class="col-6 border border-1 shadow">
-                        <canvas id="myLineChart"></canvas>
+                    <!-- line chart using chartJS -->
+                    <div class="col-12 col-lg-7 pt-2 p-lg-0">
+                        <p class="fw-bold fs-4">Statistics</p>
+                        <canvas id="myLineChart" class="border border-1 shadow"></canvas>
                     </div>
                 </div>
 
                 <!-- Stats Table -->
-                <div class="col-12 mt-5">
-                    <h4 class="">History</h4>
-                    <table id="myTable" class="table table-reponsive table-hover table-striped table-light border border-2 shadow">
-                        <thead class="">
-                          <tr>
-                            <th>Request ID</th>
-                            <th>Date</th>
-                            <th>Status</th>
-                            <th>Details</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                              <td>#3092</td>
-                              <td>2023-01-05</td>
-                              <td>Pending</td>
-                              <td><button class="btn btn-outline-success">View Details</button></td>
-                            </tr>
-                            <tr>
-                                <td>#2198</td>
-                                <td>2022-11-21</td>
-                                <td>Completed</td>
-                                <td><button class="btn btn-outline-success">View Details</button></td>
-                            </tr>
-                            <tr>
-                                <td>#2187</td>
-                                <td>2022-10-11</td>
-                                <td>Completed</td>
-                                <td><button class="btn btn-outline-success">View Details</button></td>
-                            </tr>
-                          </tbody>
-                    </table>
+                <div class="container mt-5">
+                    <h4 class="mb-4">History</h4>
+                    <div class="table-responsive">
+                        <table id="myTable" class="table table-hover table-striped table-light border border-2 shadow">
+                            <thead>
+                                <tr>
+                                    <th>Request ID</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#3092</td>
+                                    <td>2023-01-05</td>
+                                    <td>Pending</td>
+                                    <td><button class="btn btn-outline-success">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#2198</td>
+                                    <td>2022-11-21</td>
+                                    <td>Completed</td>
+                                    <td><button class="btn btn-outline-success">View Details</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#2187</td>
+                                    <td>2022-10-11</td>
+                                    <td>Completed</td>
+                                    <td><button class="btn btn-outline-success">View Details</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="d-block d-lg-none border border-3">
+            <footer class="py-1 px-2 border border-5 border-bottom-0 border-start-0 border-end-0 fixed-bottom" style="background-color: white;">
+              <ul class="nav w-100 d-flex align-items-center justify-content-between">
+                <li class="nav-item"><a href="./dashboard.html" class="nav-link px-2 fs-1 active-page" title="Dashboard"><i class='bx bxs-dashboard'></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 fs-1 link-green" title="Pick up"><i class='bx bxs-truck' ></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 fs-1 link-green" title="Donations"><i class='bx bx-donate-heart'></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 fs-1 link-green" title="Learn More"><i class='bx bxs-book'></i></a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 fs-1 link-green" title="Profile"><i class='bx bx-user'></i></a></li>
+              </ul>
+            </footer>
+          </div>          
     </div>
 
     <!-- Custom JS -->
     <script src="../../script/dashboard.js"></script>
+    <script src="../../script/bootstrap.min.js"></script>
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
