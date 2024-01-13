@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard || EcoCycle</title>
+
+    <link rel="shortcut icon" href="../../images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../style/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <!-- Box icons cdn -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+</head>
+<body>
+    <div class="w-100 d-lg-flex flex-row gap-4">
+        <!-- Aside Nav -->
+        <div class="d-none d-lg-flex flex-column flex-shrink-0 p-3 bg-body-tertiary border border-start-0 border-top-0 border-bottom-0 border-3 position-sticky fixed-top" style="width: 22%; height: 100vh;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none gap-3 ps-3">
+              <img src="../../images/favicon.png" alt="">
+              <span class="fs-4 fw-bold">Eco<span class="text-success">Cycle</span></span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="./dashboard.html" class="nav-link d-flex align-items-center gap-3 link-green" aria-current="page">
+                <i class='bx bxs-dashboard'></i>
+                  Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="./pickUp.html" class="nav-link d-flex align-items-center gap-3 link-green">
+                <i class='bx bxs-truck' ></i>
+                  Pick Up
+                </a>
+              </li>
+              <li>
+                <a href="./donations.html" class="nav-link d-flex align-items-center gap-3 active-page">
+                <i class='bx bx-donate-heart'></i>
+                  Donations
+                </a>
+              </li>
+              <li>
+                <a href="./learn.html" class="nav-link d-flex align-items-center gap-3 link-green">
+                <i class='bx bxs-book'></i>
+                  Learn
+                </a>
+              </li>
+              <li>
+                <a href="./userProfile.html" class="nav-link d-flex align-items-center gap-3 link-green">
+                <i class='bx bx-user'></i>
+                  Profile
+                </a>
+              </li>
+            </ul>
+            <div class="col-12" id="nav-img">
+
+            </div>
+        </div>
+
+        <!-- Dashboard Body (Pick up Section) -->
+        <div class="d-flex flex-column col-lg-9 px-2 ps-lg-3 pe-lg-5 mb-5 pb-4 m-lg-0">
+            <div class="mb-4">
+              <h3 class="fs-4 mb-4 pt-3 ps-2 fw-bold text-center text-lg-start">Donations</h3>
+              <hr>
+            </div>
+
+            <div class="shadow rounded rounded-3">
+                <p class="p-3 fw-bold text-danger">Please Fill the form with the necessary information 😊</p>
+                <form action="">
+                    <!-- Check Boxes (Donations Types)-->
+                    <div>
+                        <h5 class="text-center fw-bold pt-3">Donation Type</h5>
+                        <ul class="d-flex align-items-center justify-content-around pb-4 p-0 flex-wrap">
+                            <li>
+                              <input type="checkbox" class="d-none" id="clothesDonation" />
+                              <label class="label d-flex flex-column text-center fw-bold" for="clothesDonation"><img src="../../images/donation-form/icons8-clothes-100.png" class="d-block img-fluid" />
+                            Clothes</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" class="d-none" id="booksDonation" />
+                              <label class="label d-flex flex-column text-center fw-bold" for="booksDonation"><img src="../../images/donation-form/icons8-books-100.png" class="d-block img-fluid" />
+                            Books</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" class="d-none" id="electronicDonations" />
+                              <label class="label d-flex flex-column text-center fw-bold" for="electronicDonations"><img src="../../images/donation-form/icons8-iron-100.png" class="d-block img-fluid" />
+                            Electronics</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="d-none" id="furniture" />
+                                <label class="label d-flex flex-column text-center fw-bold" for="furniture"><img src="../../images/donation-form/icons8-furniture-100.png" class="d-block img-fluid" />
+                              Furniture</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="d-none" id="toys" />
+                                <label class="label d-flex flex-column text-center fw-bold" for="toys"><img src="../../images/donation-form/icons8-toys-100.png" class="d-block img-fluid" />
+                              Toys</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" class="d-none" id="accessories" />
+                                <label class="label d-flex flex-column text-center fw-bold" for="accessories"><img src="../../images/donation-form/icons8-accessories-100.png" class="d-block img-fluid" />
+                              Accessories</label>
+                            </li>
+                          </ul>
+                    </div>
+
+                    <!-- Date & Time Picker-->
+                    <div class="px-3 pb-3">
+                        <!-- <h5 class="text-center fw-bold pt-3">Date and Time</h5> -->
+                        <div class="mb-3">
+                            <label for="datetimeSelect" class="form-label fw-bold text-success">Select Date and Time</label>
+                            <input type="datetime-local" id="datetimeSelect" name="datetimeSelect" class="form-control" required>
+                        </div>
+                    </div>
+
+                    <!-- Address Select -->
+                    <div class="px-3 pb-3">
+                        <div class="mb-3">
+                            <label for="homeAddress" class="form-label fw-bold text-success">House Address</label>
+                            <input type="text" id="homeAddress" name="homeAddress" class="form-control" placeholder="Type your address" required>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center pb-3">
+                        <button class="btn btn-outline-success" id="openConfirmationDonationModal">Confirm order details</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="confirmationDonationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body" id="donationConfirmationDetails">
+                    <!-- Selected details will be displayed here -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-outline-success" id="confirmOrderBtn">Confirm</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        <div class="d-block d-lg-none">
+            <footer class="py-1 px-2 border border-5 border-bottom-0 border-start-0 border-end-0 fixed-bottom" style="background-color: white;">
+              <ul class="nav w-100 d-flex align-items-center justify-content-between">
+                <li class="nav-item"><a href="./dashboard.html" class="nav-link px-2 fs-1 link-green" title="Dashboard"><i class='bx bxs-dashboard'></i></a></li>
+                <li class="nav-item"><a href="./pickUp.html" class="nav-link px-2 fs-1 link-green" title="Pick up"><i class='bx bxs-truck' ></i></a></li>
+                <li class="nav-item"><a href="./donations.html" class="nav-link px-2 fs-1 active-page" title="Donations"><i class='bx bx-donate-heart'></i></a></li>
+                <li class="nav-item"><a href="./learn.html" class="nav-link px-2 fs-1 link-green" title="Learn More"><i class='bx bxs-book'></i></a></li>
+                <li class="nav-item"><a href="./userProfile.html" class="nav-link px-2 fs-1 link-green" title="Profile"><i class='bx bx-user'></i></a></li>
+              </ul>
+            </footer>
+        </div>          
+    </div>
+
+    <!-- Custom JS -->
+    <script src="../../script/donations.js"></script>
+    <script src="../../script/bootstrap.min.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.7/build/player/lottie.min.js"></script>
+    <script>
+      // Replace with the path to your LottieFiles JSON file
+      var animationPath = "../../images/Animation - 1701628702730.json";
+    
+      // Replace with the ID of your HTML container
+      var container = document.getElementById("nav-img");
+    
+      // Load the Lottie animation
+      lottie.loadAnimation({
+        container: container,
+        renderer: "svg", // or "canvas" or "html"
+        loop: true,
+        autoplay: true,
+        path: animationPath
+      });
+    </script>
+
+</body>
+</html>
