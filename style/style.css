@@ -66,7 +66,7 @@
     background-color: #009900;
     border-radius: 20px;
 }
-.hero-text{
+.hero-text, .factsText{
     font-family: 'Recoleta', sans-serif;
 }
 .feature {
