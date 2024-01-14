@@ -11,40 +11,53 @@
 </head>
 <body>
     <!-- Nav Bar -->
-    <div class="px-5">
-        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-          <div class="col-md-3 mb-2 mb-md-0">
-            <a href="/" class="d-flex fw-bold fs-2 align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-                Eco<span class="text-green">Cycle</span>
-            </a>
+    <div class="px-2 px-lg-4 bg-light">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top px-lg-4" aria-label="Offcanvas navbar large">
+        <div class="container-fluid">
+          <a href="/" class="d-flex fw-bold fs-2 align-items-center col-md-3 mb-md-0 text-dark text-decoration-none">
+            Eco<span class="text-green">Cycle</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Offcanvas</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+              </ul>
+              <form class="d-flex mt-3 mt-lg-0" role="search">
+                <button class="btn btn-outline-success px-3" type="submit">Go to Dashboard</button>
+              </form>
+            </div>
           </div>
-    
-          <ul class="nav col-12 gap-3 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">About us</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Our Services</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Our Goals</a></li>
-          </ul>
-    
-          <div class="col-md-3 text-end">
-            <a href="./pages/userAuth/signIn.html"><button type="button" class="btn btn-outline-success me-2">Login</button></a>
-            <a href="./pages/userAuth/signUp.html"><button type="button" class="btn btn-green px-4">Sign-up</button></a>
-          </div>
-        </header>
-      </div>
+        </div>
+      </nav>
+    </div>
     <!-- End of Nav Bar -->
 
     <!-- Hero Section -->
-    <div class="col-xxl-8 px-5 py-5">
-      <div class="row flex-lg-row-reverse align-items-center g-5">
-        <div class="col-10 col-sm-8 col-lg-6" id="hero-img">
+    <div class="col-xxl-8 px-2 px-lg-5 py-5">
+      <div class="row flex-lg-row-reverse align-items-center pt-0 pt-lg-5">
+        <div class="col-12 col-lg-6" id="hero-img">
 
         </div>
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6 p-lg-0 text-center text-lg-start">
           <h1 class="display-3 fw-bold lh-1 mb-3">Recycle your <span class="text-green">waste</span> and save the world.</h1>
           <p class="fs-5 text-secondary">Effortless Waste Solutions at Your Fingertips: Order, Relax, Recycle!</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <button type="button" class="btn btn-green btn-lg px-4 me-md-2">Get Started</button>
+            <a href="./pages/customer/dashboard.html"><button type="button" class="btn btn-outline-success btn-lg px-4 me-md-2">Go to Dashboard</button></a>
           </div>
         </div>
       </div>
@@ -52,7 +65,7 @@
     <!-- End of Hero Section -->
 
     <!-- Banner Section -->
-      <div class="container text-white bg-green py-2 rounded-5">
+      <div class="d-none d-lg-block container text-white bg-green py-2 rounded-5 shadow-lg">
         <h4 class="text-center fs-3 mb-4">Done in 3 easy steps</h4>
         <div class="row d-flex align-items-center justify-content-between px-5 text-center">
           <div class="col-3 d-flex flex-column">
@@ -74,6 +87,8 @@
       </div>
     <!-- End of Banner Section -->
 
+
+  <script src="./script/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.7.7/build/player/lottie.min.js"></script>
   <script>
     // Replace with the path to your LottieFiles JSON file
